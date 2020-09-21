@@ -21,7 +21,7 @@ class Teachers(generics.ListCreateAPIView):
         # Filter the mangos by owner, so you can only see your owned mangos
         teachers = Teacher.objects.filter(owner=request.user.id)
         # Run the data through the serializer
-        data = TeacherSerializer(teacher, many=True).data
+        data = TeacherSerializer(teachers, many=True).data
         return Response({ 'teachers': data })
 
     def post(self, request):
@@ -29,7 +29,7 @@ class Teachers(generics.ListCreateAPIView):
         # Add user to request data object
         request.data['teacher']['owner'] = request.user.id
         # Serialize/create mango
-        teacher = MangoSerializer(data=request.data['teacher'])
+        teacher = TeacherSerializer(data=request.data['teacher'])
         # If the mango data is valid according to our serializer...
         if teacher.is_valid():
             # Save the created mango & send a response
@@ -82,7 +82,7 @@ class TeacherDetail(generics.RetrieveUpdateDestroyAPIView):
         # Add owner to data object now that we know this user owns the resource
         request.data['teacher']['owner'] = request.user.id
         # Validate updates with serializer
-        data = MangoSerializer(teacher, data=request.data['teacher'])
+        data = TeacherSerializer(teacher, data=request.data['teacher'])
         if data.is_valid():
             # Save & send a 204 no content
             data.save()

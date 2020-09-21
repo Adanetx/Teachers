@@ -14,7 +14,7 @@ class MangoSerializer(serializers.ModelSerializer):
 class TeacherSerializer(serializers.ModelSerializer):
     class Meta:
         model = Teacher
-        fields = ('id', 'name', 'age', 'sex', 'favorite_course', 'educaton', 'owner')
+        fields = ('id', 'name', 'age', 'sex', 'favorite_course', 'education', 'owner')
 
 
 class UserSerializer(serializers.ModelSerializer):

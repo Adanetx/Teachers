@@ -9,7 +9,7 @@ class Teacher(models.Model):
   age = models.IntegerField()
   sex = models.CharField(max_length=50)
   favorite_course = models.CharField(max_length=100)
-  educaton = models.CharField(max_length=100)
+  education = models.CharField(max_length=100)
   owner = models.ForeignKey(
       get_user_model(),
       on_delete=models.CASCADE
@@ -17,7 +17,7 @@ class Teacher(models.Model):
 
   def __str__(self):
     # This must return a string
-    return f"In our collage '{self.name}' is '{self.age}' years old, '{self.sex}', whose favorite course is '{self.favorite_course}', has '{self.educaton}' highest level of educaton."
+    return f"In our collage '{self.name}' is '{self.age}' years old, '{self.sex}', whose favorite course is '{self.favorite_course}', has '{self.education}' highest level of educaton."
 
   def as_dict(self):
     """Returns dictionary version of Mango models"""
@@ -27,5 +27,5 @@ class Teacher(models.Model):
         'age': self.age,
         'sex': self.sex,
         'favorite_course': self.favorite_course,
-        'educaton': self.educaton
+        'education': self.education
     }
