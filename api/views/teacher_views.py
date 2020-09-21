@@ -43,7 +43,7 @@ class TeacherDetail(generics.RetrieveUpdateDestroyAPIView):
     def get(self, request, pk):
         """Show request"""
         # Locate the mango to show
-        teacher = get_object_or_404(teacher, pk=pk)
+        teacher = get_object_or_404(Teacher, pk=pk)
         # Only want to show owned mangos?
         if not request.user.id == teacher.owner.id:
             raise PermissionDenied('Unauthorized, you do not own this')
