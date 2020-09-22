@@ -5,9 +5,13 @@ manage the workers(teachers) in a collage it conatains the detatil information o
 this is
 
 ## important links
+
 [client side repository](https://github.com/Adanetx/clientTeachers)
+
 [Deployed app]()
+
 [Api Repo](https://github.com/Adanetx/Teachers)
+
 
 ## user stories
 
