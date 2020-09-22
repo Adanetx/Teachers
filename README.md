@@ -37,7 +37,8 @@ this is
 
 ## Instalation and setup process
 
-- download template from [download](https://git.generalassemb.ly/ga-wdi-boston/django-auth-template)
+- download template from [github-page](https://git.generalassemb.ly/ga-wdi-boston/django-auth-template)
+- git clone or download
 - move .zip file and unzip it
 - replace read me by your own
 - git init (means create  git folder)
